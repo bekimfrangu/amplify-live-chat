@@ -1,0 +1,23 @@
+type Message
+  @model
+  @auth(
+   rules: [
+      { allow: owner, operations: [create, update, delete, read] }
+      { allow: private, operations: [read, update] }
+      { allow: public, operations: [read], provider: apiKey }
+    ]
+  ) {
+  id: ID!
+  body: [Body]
+  owner: String
+}
+
+type Body {
+  companyName:String
+  messages: [Chat]
+}
+
+type Chat {
+  message: String
+  time: String
+}

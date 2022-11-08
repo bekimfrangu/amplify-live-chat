@@ -1,0 +1,18 @@
+projects:
+  livechat:
+    schemaPath: amplify/backend/api/livechat/build/schema.graphql
+    includes:
+      - 'y'
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: typescript
+        generatedFileName: 'y'
+        docsFilePath: .
+        region: eu-central-1
+        apiId: null
+        maxDepth: 10
+extensions:
+  amplify:
+    version: 3
